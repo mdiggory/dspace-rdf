@@ -1,0 +1,96 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+   <groupId>org.dspace</groupId>
+   <artifactId>dspace-rdf</artifactId>
+   <name>DSpace RDF generation support</name>
+   <description>
+      A combination of OpenRDF model and SAX Content Handlers available
+      to support the generation of RDF for DSpace Objects.
+   </description>
+   <url>http://projects.dspace.org/dspace-rdf</url>
+   
+   <parent>
+      <artifactId>dspace-parent</artifactId>
+      <groupId>org.dspace</groupId>
+      <version>1.5.2-SNAPSHOT</version>
+   </parent>
+      <!-- 
+      The Subversion repository location is used by Continuum to update against
+      when changes have occured, this spawns a new build cycle and releases snapshots
+      into the snapshot repository below.
+   -->
+   <scm>
+      <connection>scm:svn:http://dspace-sandbox.googlecode.com/svn/modules/dspace-rdf/trunk</connection>
+      <developerConnection>scm:svn:https://dspace-sandbox.googlecode.com/svn/modules/dspace-rdf/trunk</developerConnection>
+      <url>http://dspace-sandbox.googlecode.com/svn/modules/dspace-rdf/trunk</url>
+   </scm>
+   
+   <repositories>
+      <repository>
+         <id>maven.dspace.org/snapshot</id>
+         <name>DSpace Maven Snapshot Repository</name>
+         <url>http://maven.dspace.org/snapshot</url>
+         <releases>
+            <enabled>false</enabled>
+            <checksumPolicy>fail</checksumPolicy>
+         </releases>
+         <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>never</updatePolicy>
+            <checksumPolicy>fail</checksumPolicy>
+         </snapshots>
+      </repository>
+      <repository>
+         <releases>
+            <enabled>true</enabled>
+            <updatePolicy>always</updatePolicy>
+            <checksumPolicy>warn</checksumPolicy>
+         </releases>
+         <snapshots>
+            <enabled>false</enabled>
+            <updatePolicy>never</updatePolicy>
+            <checksumPolicy>fail</checksumPolicy>
+         </snapshots>
+         <id>aduna-repo</id>
+         <name>Aduna Repository</name>
+         <url>http://repository.aduna-software.org/maven2</url>
+      </repository>
+   </repositories>
+   
+   <dependencies>
+      <dependency>
+         <groupId>org.dspace</groupId>
+         <artifactId>dspace-api</artifactId>
+      </dependency>
+      <dependency>
+         <groupId>org.openrdf</groupId>
+         <artifactId>openrdf-rio-api</artifactId>
+         <version>2.0.1</version>
+      </dependency>
+      <dependency>
+         <groupId>org.openrdf</groupId>
+         <artifactId>openrdf-rio-rdfxml</artifactId>
+         <version>2.0.1</version>
+      </dependency>
+      <dependency>
+         <groupId>org.openrdf</groupId>
+         <artifactId>openrdf-sail-memory</artifactId>
+         <version>2.0.1</version>
+      </dependency>
+      <dependency>
+         <groupId>org.openrdf</groupId>
+         <artifactId>openrdf-repository-sail</artifactId>
+         <version>2.0.1</version>
+      </dependency>
+      <dependency>
+         <artifactId>jtidy</artifactId>
+         <groupId>org.hibernate</groupId>
+         <version>r8-20060801</version>
+      </dependency>
+      <dependency>
+         <groupId>org.slf4j</groupId>
+         <artifactId>slf4j-log4j12</artifactId>
+         <version>1.0.1</version>
+      </dependency>
+   </dependencies>
+</project>
